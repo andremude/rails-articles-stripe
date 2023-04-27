@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 gem "devise"
 gem 'faker'
+gem "pundit"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
