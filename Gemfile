@@ -45,6 +45,7 @@ gem "bootsnap", require: false
 gem "devise"
 gem 'faker'
 gem "pundit"
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Sass to process CSS
 # gem "sassc-rails"
