@@ -46,6 +46,7 @@ gem "devise"
 gem 'faker'
 gem "pundit"
 gem 'dotenv-rails', groups: [:development, :test]
+gem "stripe", "~> 8.2"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
