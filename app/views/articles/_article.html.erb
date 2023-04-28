@@ -1,0 +1,6 @@
+<%= link_to article, class: "article-container" do %>
+  <%= content_tag :span, article.tag[:name], class: article.tag[:class] + ' ' +'article-tag' %>
+  <h4 class="article-title"><%= article.title %></h4>
+  <p class="article-body"><%= article.body[0..125] %>...</p>
+  <p class="article-created-at"><%= article.created_at.strftime("%b %d, %Y") %></p>
+ <% end %>

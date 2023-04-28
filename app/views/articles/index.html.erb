@@ -1,0 +1,24 @@
+<div class="index-main-container">
+  <section class="index-section">
+    <div>
+      <h2 class="index-header">Latest Articles</h2>
+      <div class="header-underline"></div>
+    </div>
+    <div class="index-articles-container">
+      <% @last_articles.each do |article| %>
+        <div><%= render "articles/article", article: article %></div>
+      <% end %>
+    </ul>
+  </section>
+  <section class="index-section">
+    <div>
+      <h2 class="index-header">Free Articles</h2>
+      <div class="header-underline"></div>
+    </div>
+    <div class="index-articles-container">
+      <% @free_articles.each do |article| %>
+        <div><%= render "articles/article", article: article %></div>
+      <% end %>
+    </div>
+  </section>
+</div>

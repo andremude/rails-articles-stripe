@@ -1,0 +1,42 @@
+<div class="show-main-container">
+  <div class="show-latest-articles-container">
+    <div>
+      <h3 class="show-latest-header">Latest Articles</h3>
+      <div class="show-latest-header-underline"></div>
+    </div>
+    <ul class="show-latest-articles">
+      <% @last_articles.each do |article| %>
+        <li><%= render "articles/article", article: article %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="show-article-container">
+    <%= content_tag :span, @article.tag[:name], class: @article.tag[:class] + ' ' + 'show-article-tag' %>
+    <div class="show-header-container">
+      <h2 class="show-article-header"><%= @article.title %></h2>
+    </div>
+    <p class="show-article-text"><%= @article.created_at.strftime("%b %d, %Y") %></p>
+
+    <% if policy(@article).show? %>
+      <p class="show-article-text"><%= @article.body %></p>
+    <% else %>
+      <div>
+        <p class="show-article-text-container"><%= @article.preview %>...</p>
+        <div class="show-article-text">
+          <div class="article-text-filter">
+            <p class="show-article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt pharetra pharetra. Sed vehicula lobortis libero ac pharetra. Integer et ante a leo commodo dapibus ut sit amet orci. Ut iaculis scelerisque libero, et sodales lectus euismod sed. Vestibulum hendrerit, diam at volutpat imperdiet, dolor metus imperdiet libero, a convallis enim arcu id metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent rutrum scelerisque ante, vehicula consequat lectus rhoncus sit amet. Vestibulum non consectetur elit. Proin a tortor quis mi euismod cursus id eget lacus. Nulla placerat ante eget porta condimentum. Morbi mauris lorem, mollis ut gravida ut, placerat aliquam orci. Etiam malesuada tellus neque. In hac habitasse platea dictumst. Phasellus rhoncus lectus vitae vestibulum fermentum. Quisque iaculis iaculis ex vitae placerat. Nullam blandit.</p>
+            <p class="show-article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac rhoncus erat, feugiat euismod augue. Sed vestibulum lobortis maximus. Sed eu turpis pellentesque, lacinia mi pretium, tristique purus. Suspendisse neque nulla, elementum in malesuada id, convallis ac nulla. Donec iaculis augue eu elementum finibus. Nam egestas non elit malesuada volutpat. Nulla facilisi. Mauris pulvinar accumsan tellus, non venenatis neque gravida ac. Donec viverra euismod arcu, et placerat urna pellentesque sed. Vestibulum finibus a diam at aliquet. Integer ut sodales massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et finibus ipsum. Cras aliquet, arcu nec pharetra condimentum, sem neque auctor nisl, nec pellentesque massa ex sit amet quam. Integer ac mauris non libero scelerisque.</p>
+          </div>
+          <p class="show-article-controls">
+            Log in to read the rest of the article.
+            <% if user_signed_in? %>
+              <%= button_to 'Add to cart', order_items_path(article_id: params[:id]), method: :post, class: "article-control-link" %>
+            <% else  %>
+              <%= link_to 'Log In', new_user_session_path , class: "article-control-link" %>
+            <% end  %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

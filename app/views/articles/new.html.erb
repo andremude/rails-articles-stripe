@@ -1,0 +1,24 @@
+<div class="new-article-container">
+  <h2 class="new-article-header">Create an article</h2>
+  <div class="new-article-form">
+    <%= form_with model: @article do |form|  %>
+      <div>
+        <%= form.label :title, class: "new-article-label" %>
+        <%= form.text_field :title, class: "new-article-input" %>
+      </div>
+      <div>
+        <%= form.label :body, class: "new-article-label" %>
+        <%= form.text_area :body, class: "new-article-input" %>
+      </div>
+      <div>
+        <%= form.label :price, class: "new-article-label" %>
+        <%= form.number_field :price, class: "new-article-input" %>
+      </div>
+      <div id="articlePrivate">
+        <%= form.label :private %>
+        <%= form.check_box :private %>
+      </div>
+      <%= form.submit "Create", class: "new-article-btn" %>
+    <% end %>
+  </div>
+</div>
