@@ -27,12 +27,12 @@ class ArticlesController < ApplicationController
     else
       flash[:error] = "Error creating article."
       render :new
+    end
   end
 
   private
 
-    def article_params
-      params.require(:article).permit(:title, :body, :price, :private)
-    end
+  def article_params
+    params.require(:article).permit(:title, :body, :price, :private)
   end
 end
