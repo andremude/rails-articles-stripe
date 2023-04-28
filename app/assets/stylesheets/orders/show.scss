@@ -1,0 +1,106 @@
+.show-order-main-container {
+  display: grid;
+  margin-left: 4rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.show-order-latest-articles {
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.show-order-latest-header {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.025em;
+}
+
+.show-order-latest-underline {
+  width: 100%;
+  border-bottom-width: 2px;
+}
+
+.order-latest-articles {
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: column;
+}
+
+.show-order-container {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-column: span 3 / span 3;
+}
+
+.show-order-header {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.orders-list {
+  width: 100%;
+}
+
+.order-item {
+  display: flex;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  justify-content: space-between;
+}
+
+.show-order-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.show-order-price {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.show-order-total-container {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  align-self: flex-end;
+}
+
+.show.order-total {
+  margin-right: 5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.show-order-sum {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.order-pay-btn {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 3rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  align-self: flex-end;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}

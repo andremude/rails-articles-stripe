@@ -1,0 +1,168 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ .nav-main-container {
+   border-bottom: solid 4px #16a34a;
+ }
+
+ .nav-container {
+   display: flex;
+   margin: 8px auto;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 1280px;
+   height: 4rem;
+
+   @media (min-width: 640px) {
+     padding-left: 1.5rem;
+     padding-right: 1.5rem;
+   }
+
+   @media (min-width: 1024px) {
+     padding-left: 2rem;
+     padding-right: 2rem;
+   }
+ }
+
+.logo-container a {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-container i {
+  font-size: 48px;
+  margin-right: 8px;
+}
+
+.logo-container p {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16a34a;
+}
+
+//  .logo {
+//    width: auto;
+//    height: 2rem;
+//  }
+
+ .email-logout-container {
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   font-weight: 700;
+ }
+
+ .email-link {
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   font-weight: 700;
+ }
+
+.bold-link {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  margin: 0 8px;
+ }
+
+ .user-links {
+   display: flex;
+   margin-left: 2rem;
+   align-items: center;
+ }
+
+ .orders-cart {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+ }
+
+ .cart {
+   width: 2rem;
+   height: 2rem;
+ }
+
+ .login-link {
+   padding-left: 0.25rem;
+   padding-right: 0.25rem;
+   padding-top: 0.75rem;
+   padding-bottom: 0.75rem;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   font-weight: bold;
+   text-decoration: none;
+   color: grey;
+   margin: 0 6px;
+ }
+
+ .signin-link {
+   padding-top: 0.75rem;
+   padding-bottom: 0.75rem;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   border-radius: 0.5rem;
+   background-color: #16a34a;
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   margin: 0 6px;
+ }
+
+ .notice-container {
+   background-color: #D1FAE5;
+ }
+
+ .notice-alert {
+   width: 100%;
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+ }
+
+ .alert-container {
+   background-color: #FECACA;
+ }
+
+ .yield-container {
+    padding: 1rem 5rem;
+    max-width: 1280px;
+    @media (min-width: 640px) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+   @media (min-width: 1024px) {
+     padding-left: 2rem;
+     padding-right: 2rem;
+   }
+ }
