@@ -1,0 +1,41 @@
+<div class="show-order-main-container">
+  <div class="show-order-latest-articles">
+    <div>
+      <h3 class="show-order-latest-header">
+        Latest Articles
+      </h3>
+      <div class="show-order-latest-underline"></div>
+    </div>
+    <div class="order-latest-articles">
+      <% @last_articles.each do |article| %>
+        <div><%= render "articles/article", article: article %></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="show-order-container">
+    <h2 class="show-order-header">
+      Shopping Cart
+    </h2>
+    <ul class="orders-list">
+    <% if @order.order_items.present? %>
+      <% @order.order_items.each do |order_item| %>
+        <li class="order-item">
+          <div class="show-order-title"><%=order_item.article.title%></div>
+          <div class="show-order-price">$ <%=order_item.article.price / 100.to_f %></div>
+        </li>
+      <% end %>
+    <% else %>
+      <span>Your have no items in your cart</span>
+    <% end %>
+    </ul>
+    <div class="show-order-total-container">
+      <span class="show-order-total"
+        >Total</span
+      >
+      <span class="show-order-sum">$ <%= @order.order_items.map { |i| i.article.price }.sum / 100.to_f %></span>
+    </div>
+    <%= link_to 'Pay', order_checkout_index_path(@order), method: :post, class: 'order-pay-btn' %>
+  <span>Pay with Session Checkout</span>
+    <%= button_to "Pay", order_checkout_path(@order), method: :get %>
+  </div>
+</div>
