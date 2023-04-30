@@ -8,7 +8,18 @@
       <% @last_articles.each do |article| %>
         <div><%= render "articles/article", article: article %></div>
       <% end %>
-    </ul>
+    </div>
+  </section>
+  <section class="index-section">
+    <div>
+      <h2 class="index-header">Premium Articles</h2>
+      <div class="header-underline"></div>
+    </div>
+    <div class="index-articles-container">
+      <% @premium_articles.each do |article| %>
+        <div><%= render "articles/article", article: article %></div>
+      <% end %>
+    </div>
   </section>
   <section class="index-section">
     <div>

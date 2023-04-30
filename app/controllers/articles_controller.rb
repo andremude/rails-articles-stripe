@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   def index
     @last_articles = Article.order(created_at: :desc).limit(6)
     @free_articles = Article.free
+    @premium_articles = Article.paid
   end
 
   def show
