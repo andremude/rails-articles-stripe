@@ -27,7 +27,7 @@ class Article < ApplicationRecord
   private
 
   def tag_name
-    private ? 'Locked' : 'Free'
+    private ? 'Premium' : 'Free'
   end
 
   def tag_class
