@@ -22,20 +22,43 @@
         </div>
         <div>
           <%= link_to 'Home', root_path, class: 'bold-link' %>
-          <%= link_to 'New Article', new_article_path, class: 'bold-link' %>
         </div>
         <div class="user-links">
           <% if user_signed_in? %>
             <div class="email-logout-container">
-              <%= link_to current_user.email, "#", class: 'email-link' %>
-              <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'bold-link' %>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  <i class="fa-regular fa-user"></i>
+                  My Account
+                </button>
+                <div class="dropdown-content">
+                  <%= link_to profile_path, class: 'email-link' do %>
+                    <i class="fa-solid fa-user"></i>
+                    My Profile
+                  <% end %>
+                  <%= link_to new_article_path, class: 'email-link' do %>
+                    <i class="fa-solid fa-plus"></i>
+                    New Article
+                  <% end %>
+                  <%= link_to destroy_user_session_path, method: :delete, class: 'email-link' do %>
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Log Out
+                  <% end %>
+                </div>
+              </div>
             </div>
-            <%= link_to current_orders_path, class: "orders-cart" do %>
-              <svg xmlns="http://www.w3.org/2000/svg" class="cart" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              ( 0 )
-            <% end %>
+            <div>
+              <%= link_to current_orders_path, class: "orders-cart" do %>
+                <svg xmlns="http://www.w3.org/2000/svg" class="cart" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <% if @order&.order_items.present? %>
+                            ( <%= @order.order_items.size %> )
+                <% else %>
+                (0)
+                <% end %>
+              <% end %>
+            </div>
           <% else %>
             <%= link_to "Log In", new_user_session_path, class: "login-link" %>
             <%= link_to "Sign In", new_user_registration_path, class: "signin-link" %>
