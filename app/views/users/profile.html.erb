@@ -1,5 +1,6 @@
 <div>
-  <h2>My profile </h2>
+  <h2>My profile - <%= current_user.email %></h2>
+  <div class="profile-underline"></div>
   <div>
     <div>
       <div>
@@ -9,14 +10,15 @@
       </div>
     </div>
 
-      <% if @articles.any? %>
-        <ul>
+      <% if @articles.present? %>
+        <div class="purchased-articles">
           <% @articles.each do |article| %>
-            <li><%= render 'articles/article', article: article %></li>
+            <div><%= render 'articles/article', article: article %></div>
           <% end %>
-        </ul>
+        </div>
       <% else %>
         You have not purchased any article.
       <% end %>
+
   </div>
 </div>
