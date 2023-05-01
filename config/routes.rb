@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     get '/checkout', to: 'orders#checkout'
   end
 
+  get 'profile', to: 'users#profile'
+
   post '/webhook', to:'webhook#receive'
 end
