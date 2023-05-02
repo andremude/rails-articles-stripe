@@ -10,6 +10,12 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  def destroy
+    order_item = OrderItem.find(params[:id])
+    order_item.destroy
+    redirect_to order_item_path, notice: 'Successfully removed from cart.'
+  end
+
   def current_order
     order = Order.where(user_id: current_user.id, status: 'created').order(updated_at: :desc).last
     order || Order.create(user_id: current_user.id)

@@ -1,6 +1,5 @@
 .show-order-main-container {
   display: grid;
-  margin-left: 4rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -103,4 +102,19 @@
   align-self: flex-end;
   border-radius: 0.5rem;
   border: 1px solid black;
+}
+
+.remove-from-cart {
+  width: 25px;
+  color: black;
+  text-decoration: none;
+  margin-right: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.left-order-item {
+  display: flex;
+  align-items: center;
 }
