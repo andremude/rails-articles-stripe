@@ -34,15 +34,18 @@
     <% end %>
     </div>
     <div class="show-order-total-container">
-      <span class="show-order-total"
-        >Total</span
+      <span class="show-order-total">
+        <strong>Total</strong>
+      </span
       >
       <span class="show-order-sum">$ <%= @order.order_items.map { |i| i.article.price }.sum / 100.to_f %></span>
     </div>
     <% if @order&.order_items.present? %>
-      <%= link_to 'Pay', order_checkout_index_path(@order), method: :post, class: 'order-pay-btn' %>
-      <span>Pay with Session Checkout</span>
-      <%= button_to "Pay", order_checkout_path(@order), method: :get %>
+      <div class="order-pay-btn-container">
+        <%= button_to 'Pay', order_checkout_index_path(@order), method: :post, class: 'order-pay-btn' %>
+      </div>
+      <%# <span>Pay with Session Checkout</span> %>
+      <%#= button_to "Pay", order_checkout_path(@order), method: :get %>
     <% end %>
   </div>
 </div>
