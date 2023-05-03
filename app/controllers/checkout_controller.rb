@@ -4,7 +4,6 @@ class CheckoutController < ApplicationController
     order = Order.find(params[:order_id])
     prices = order.articles.map do |article|
       { price: article.stripe_pricing_id, quantity: 1 }
-      #Add desciption: article.title
     end
 
     session = Stripe::Checkout::Session.create({
@@ -14,7 +13,6 @@ class CheckoutController < ApplicationController
       payment_method_types: ['card'],
       line_items: prices
     })
-
-    redirect_to session.url
+    redirect_to session.url, allow_other_host: true
   end
 end
