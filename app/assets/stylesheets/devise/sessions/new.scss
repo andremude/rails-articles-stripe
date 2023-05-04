@@ -1,0 +1,100 @@
+.devise-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.screen {
+  position: relative;
+  height: 550px;
+  width: 380px;
+  box-shadow: 0px 0px 24px #494949;
+}
+
+.screen-content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.devise-form {
+  width: 320px;
+  padding: 30px;
+  padding-top: 40px;
+}
+
+.devise-form h2 {
+  text-align: center;
+}
+
+.devise-field {
+  padding: 20px 0px;
+  position: relative;
+}
+
+.devise-input-icon {
+  position: absolute;
+  top: 30px;
+  color: #7e7e7e;
+}
+
+.devise-input {
+  border: none;
+  border-bottom: 2px solid #D1D1D4;
+  background: none;
+  padding: 10px;
+  padding-left: 24px;
+  font-weight: 700;
+  width: 75%;
+  transition: .2s;
+}
+
+.devise-input:active,
+.devise-input:focus,
+.devise-input:hover {
+  outline: none;
+  border-bottom-color: #353333;
+}
+
+.devise-submit {
+  background-color: #4CAF50;
+  font-size: 14px;
+  margin-top: 30px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: white;
+  box-shadow: 0px 2px 2px #3e8e41;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.devise-submit:active,
+.devise-submit:focus,
+.devise-submit:hover {
+  background-color: #3e8e41;;
+  outline: none;
+}
+
+.devise-button-icon {
+  font-size: 24px;
+  margin-left: auto;
+  color: white;
+}
+
+.devise-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.devise-links a {
+  color: grey;
+}
