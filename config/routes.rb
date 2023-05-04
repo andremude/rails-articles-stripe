@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     resources :checkout, only: [:create]
     get '/checkout', to: 'orders#checkout'
   end
-
   get 'profile', to: 'users#profile'
-
   post '/webhook', to:'webhook#receive'
 end
