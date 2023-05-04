@@ -15,7 +15,7 @@
     <div class="show-header-container">
       <h2 class="show-article-header"><%= @article.title %></h2>
       <% if @article.private %>
-        <h2>$<%=@article.price/100.to_f %></h2>
+        <h2 class="show-article-price">$<%=@article.price/100.to_f %></h2>
       <% end %>
     </div>
     <p class="show-article-text"><%= @article.created_at.strftime("%b %d, %Y") %></p>
