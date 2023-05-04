@@ -57,13 +57,19 @@
 }
 
 .new-article-btn {
-  padding: 0.75rem 1rem;
-  background-color: #1F2937;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  border-radius: 0.5rem;
+  background-color: #4CAF50;
+  font-size: 14px;
+  margin-top: 30px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
   display: flex;
-  justify-content: center;
-  margin: 1rem auto;
+  align-items: center;
+  width: 100%;
+  color: white;
+  box-shadow: 0px 2px 2px #3e8e41;
+  cursor: pointer;
+  transition: .2s;
 }
