@@ -1,24 +1,22 @@
-<div>
+<div class="profile-container">
   <h2>My profile - <%= current_user.email %></h2>
   <div class="profile-underline"></div>
   <div>
     <div>
       <div>
         <h3>
-          My purchases
+          You have purchased the following articles:
         </h3>
       </div>
     </div>
-
-      <% if @articles.present? %>
-        <div class="purchased-articles">
-          <% @articles.each do |article| %>
-            <div><%= render 'articles/article', article: article %></div>
-          <% end %>
-        </div>
-      <% else %>
-        You have not purchased any article.
-      <% end %>
-
+    <% if @articles.present? %>
+      <div class="purchased-articles">
+        <% @articles.each do |article| %>
+          <div><%= render 'articles/article', article: article %></div>
+        <% end %>
+      </div>
+    <% else %>
+      You have not purchased any article.
+    <% end %>
   </div>
 </div>
