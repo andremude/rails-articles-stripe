@@ -1,12 +1,22 @@
 require 'faker'
 
-p 'Creating Articles'
-60.times do
+p 'Creating Free Articles'
+30.times do
   Article.create(
-    title: Faker::Book.title,
+    title: Faker::Book.title[0...22],
     body: Faker::Lorem.paragraphs(number: 50).join("\n"),
-    private: Faker::Boolean.boolean,
-    price: [300, 500, 800, 1000].sample
+    private: false,
+    price: 0
+  )
+end
+
+p 'Creating Premium Articles'
+30.times do
+  Article.create(
+    title: Faker::Book.title[0...22],
+    body: Faker::Lorem.paragraphs(number: 50).join("\n"),
+    private: true,
+    price: [200, 400, 600].sample
   )
 end
 
