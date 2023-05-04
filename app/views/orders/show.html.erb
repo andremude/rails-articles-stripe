@@ -30,7 +30,7 @@
         </div>
       <% end %>
     <% else %>
-      <span>Your have no items in your cart</span>
+      <span>You have no items in your cart</span>
     <% end %>
     </div>
     <div class="show-order-total-container">
@@ -42,10 +42,12 @@
     </div>
     <% if @order&.order_items.present? %>
       <div class="order-pay-btn-container">
-        <%= button_to 'Pay', order_checkout_index_path(@order), method: :post, class: 'order-pay-btn' %>
-      </div>
+        <%#= button_to 'Pay', order_checkout_index_path(@order), method: :post, class: 'order-pay-btn', data: { turbo: false } %>
+        <%= link_to 'Pay', order_checkout_index_path(@order), method: :post, class: 'order-pay-btn', data: { turbo: false } %>
       <%# <span>Pay with Session Checkout</span> %>
       <%#= button_to "Pay", order_checkout_path(@order), method: :get %>
+      <%#= link_to "Pay", order_checkout_path(@order), method: :get %>
+      </div>
     <% end %>
   </div>
 </div>
