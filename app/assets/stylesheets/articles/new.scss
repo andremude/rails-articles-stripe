@@ -3,20 +3,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
-.new-article-form {
-  width: 350px;
-  border: 1px solid black;
+.new-article-form-container {
+  width: 380px;
   padding: 1rem;
   display: flex;
   justify-content: center;
   border-radius: 15px;
+  box-shadow: 0px 0px 24px #494949;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-article-form {
+  width: 320px;
+  padding: 30px;
 }
 
 .new-article-header {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  text-align: center;
 }
 
 .new-article-label {
@@ -26,7 +33,7 @@
 
 .new-article-input {
   border-radius: 0.75rem;
-  border: 1px solid black;
+  border: 1px solid grey;
   margin-bottom: 1rem;
   width: 280px;
   max-width: 280px;
@@ -37,7 +44,7 @@
 
 .new-article-form textarea {
   min-height: 10rem;
-  padding: 1rem;
+  padding-top: 10px;
 }
 
 .new-article-form label {
@@ -46,7 +53,7 @@
 
 #articlePrivate {
   display: flex;
-  align-self: center;
+  align-items: flex-end;
 }
 
 .new-article-btn {
