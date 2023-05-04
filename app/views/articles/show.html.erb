@@ -4,16 +4,19 @@
       <h3 class="show-latest-header">Latest Articles</h3>
       <div class="show-latest-header-underline"></div>
     </div>
-    <ul class="show-latest-articles">
+    <div class="show-latest-articles">
       <% @last_articles.each do |article| %>
-        <li><%= render "articles/article", article: article %></li>
+        <div><%= render "articles/article", article: article %></div>
       <% end %>
-    </ul>
+    </div>
   </div>
   <div class="show-article-container">
     <%= content_tag :span, @article.tag[:name], class: @article.tag[:class] + ' ' + 'show-article-tag' %>
     <div class="show-header-container">
       <h2 class="show-article-header"><%= @article.title %></h2>
+      <% if @article.private %>
+        <h2>$<%=@article.price/100.to_f %></h2>
+      <% end %>
     </div>
     <p class="show-article-text"><%= @article.created_at.strftime("%b %d, %Y") %></p>
 
@@ -28,11 +31,16 @@
             <p class="show-article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac rhoncus erat, feugiat euismod augue. Sed vestibulum lobortis maximus. Sed eu turpis pellentesque, lacinia mi pretium, tristique purus. Suspendisse neque nulla, elementum in malesuada id, convallis ac nulla. Donec iaculis augue eu elementum finibus. Nam egestas non elit malesuada volutpat. Nulla facilisi. Mauris pulvinar accumsan tellus, non venenatis neque gravida ac. Donec viverra euismod arcu, et placerat urna pellentesque sed. Vestibulum finibus a diam at aliquet. Integer ut sodales massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et finibus ipsum. Cras aliquet, arcu nec pharetra condimentum, sem neque auctor nisl, nec pellentesque massa ex sit amet quam. Integer ac mauris non libero scelerisque.</p>
           </div>
           <p class="show-article-controls">
-            Log in to read the rest of the article.
             <% if user_signed_in? %>
-              <%= button_to 'Add to cart', order_items_path(article_id: params[:id]), method: :post, class: "article-control-link" %>
-            <% else  %>
-              <%= link_to 'Log In', new_user_session_path , class: "article-control-link" %>
+              <div class="add-to-cart-btn">
+                <p>To read the rest of the article</p>
+                <%= button_to 'Add to cart', order_items_path(article_id: params[:id]), method: :post %>
+              </div>
+            <% else %>
+              <strong>
+                <%= link_to 'Log In', new_user_session_path , class: "article-control-link" %>
+              </strong>
+              to read the rest of the article.
             <% end  %>
           </p>
         </div>
