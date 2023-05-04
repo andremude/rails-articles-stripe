@@ -9,7 +9,6 @@ class Article < ApplicationRecord
     self.preview = body[0..150]
   end
 
-  #CHECK STATEMENT_DESCRIPTOR
   def create_stripe_product
     product = Stripe::Product.create({ name: "Article ##{id}", statement_descriptor: title})
     pricing = Stripe::Price.create({
