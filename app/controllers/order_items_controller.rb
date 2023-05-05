@@ -2,7 +2,7 @@ class OrderItemsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    order_item = current_order.order_items.new(article_id: params[:article_id])
+    order_item = current_user.current_order.order_items.new(article_id: params[:article_id])
     if order_item.save
       redirect_to root_path, notice: 'Successfully added to cart.'
     else
@@ -11,13 +11,8 @@ class OrderItemsController < ApplicationController
   end
 
   def destroy
-    order_item = OrderItem.find(params[:id])
+    order_item = current_user.current_order.order_items.find(params[:id])
     order_item.destroy
     redirect_to order_item_path, notice: 'Successfully removed from cart.'
-  end
-
-  def current_order
-    order = Order.where(user_id: current_user.id, status: 'created').order(updated_at: :desc).last
-    order || Order.create(user_id: current_user.id)
   end
 end
