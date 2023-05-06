@@ -45,9 +45,15 @@
   background: none;
   padding: 10px;
   padding-left: 24px;
-  font-weight: 700;
+  font-weight: 400;
   width: 75%;
   transition: .2s;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+}
+
+.devise-input input {
+  background-color: none;
 }
 
 .devise-input:active,
