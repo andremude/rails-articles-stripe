@@ -29,4 +29,9 @@
   column-gap: 3rem;
   row-gap: 4rem;
   margin-top: 1.5rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    row-gap: 0.5rem;
+    }
 }
