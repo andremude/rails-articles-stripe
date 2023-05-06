@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @last_articles = Article.order(created_at: :desc).limit(3)
+    @last_articles = Article.paid.order(created_at: :desc).limit(3)
     @article = policy_scope(Article).find(params[:id])
   end
 
