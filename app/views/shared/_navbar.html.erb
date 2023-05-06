@@ -42,8 +42,10 @@
           <% end %>
         </div>
       <% else %>
-        <%= link_to "Log In", new_user_session_path, class: "login-link" %>
-        <%= link_to "Sign In", new_user_registration_path, class: "signin-link" %>
+        <div class="login-signin">
+          <%= link_to "Log In", new_user_session_path, class: "login-link" %>
+          <%= link_to "Sign In", new_user_registration_path, class: "signin-link" %>
+        </div>
       <% end %>
     </div>
   </div>

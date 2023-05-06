@@ -11,16 +11,9 @@
   margin: 8px auto;
   justify-content: space-between;
   align-items: center;
+  padding: 0 12px;
   max-width: 1280px;
   height: 4rem;
-  @media (min-width: 640px) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  @media (min-width: 1024px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
 }
 
 .logo-container a {
@@ -78,12 +71,10 @@
   margin-left: 2rem;
   align-items: center;
   justify-content: space-around;
-  width: 300px;
 
   @media (max-width: 640px) {
     justify-content: space-around;
     margin-left: 0;
-    width: 150px;
   }
 }
 
@@ -104,6 +95,14 @@
   height: 2rem;
 }
 
+.login-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  padding: 2px 6px;
+}
+
 .login-link {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -113,7 +112,7 @@
   line-height: 1.25rem;
   text-decoration: none;
   color: black;
-  margin: 0 6px;
+  margin: 0 0.75rem;
   min-width: 50px;
   text-align: center;
   font-size: 1rem;
@@ -134,8 +133,7 @@
   background-color: #4CAF50;
   color: white;
   text-decoration: none;
-  margin: 0 6px;
-  min-width: 60px;
+  min-width: 55px;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
