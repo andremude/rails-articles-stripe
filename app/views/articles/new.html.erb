@@ -15,9 +15,10 @@
         <%= form.number_field :price, class: "new-article-input", min: 0, step:"100" %>
       </div>
       <div id="articlePrivate">
-        <%= form.label :private %>
+        <%= form.label :private, 'Premium' %>
         <%= form.check_box :private %>
       </div>
+      <span class="premium-span">(Premium articles will be private)</span>
       <%= button_tag 'Create Article <i class="devise-button-icon fas fa-chevron-right"></i> '.html_safe, type: 'submit', class: 'new-article-btn' %>
     <% end %>
   </div>
