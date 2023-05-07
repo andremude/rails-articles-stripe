@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def index
     @last_articles = Article.order(created_at: :desc).limit(6)
     @free_articles = Article.free
