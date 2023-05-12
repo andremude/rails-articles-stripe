@@ -74,3 +74,5 @@ Run server
 <br>
 
 ## Screenshots
+
+![Articleland](https://github.com/andremude/rails-articles-stripe/assets/71613801/26f6c28b-8766-4ca3-9808-14eab134948f)
