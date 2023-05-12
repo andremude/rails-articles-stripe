@@ -1,24 +1,76 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Tech Stack
+   * Ruby '2.7.4'
+   * Rails '7.0.4.3'
+   * PostgreSQL '12.9'
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Clone repository: `git@github.com:andremude/rails-articles-stripe.git`
 
-* System dependencies
+<br>
 
-* Configuration
+Install dependencies: 
 
-* Database creation
+  `bundle install`
 
-* Database initialization
+<br>
 
-* How to run the test suite
+Installed Gems: 
+  ```
+  gem "devise"
+  gem 'faker'
+  gem "pundit"
+  gem 'dotenv-rails', groups: [:development, :test]
+  gem "stripe", "~> 8.2"
+  gem 'rspec-rails', '~> 6.0.0'
+  gem 'rails-controller-testing'
+  ```
 
-* Services (job queues, cache servers, search engines, etc.)
+<br>
 
-* Deployment instructions
+Database management:
 
-* ...
+  `rails db:create`
+
+  `rails db:migrate`
+
+  `rails db:seed`
+
+<br>  
+
+## Set Environment Variables 
+
+  In `.env` file set: 
+
+  `STRIPE_SECRET_KEY`
+
+  `STRIPE_PUBLIC_KEY`
+
+<br>
+
+Run server
+
+  `rails server`
+
+<br>
+
+## RSpec Testing
+  
+  In Gemfile add: 
+  
+ ```
+   group :development, :test do
+     gem 'rspec-rails', '~> 6.0.0'
+     gem 'rails-controller-testing'
+   end
+```
+
+ In terminal: 
+  
+  run `bundle exec rspec`
+
+<br>
+
+## Screenshots
