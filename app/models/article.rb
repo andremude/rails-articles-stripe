@@ -1,6 +1,8 @@
 class Article < ApplicationRecord
   before_save :add_preview, if: :body?
   after_create :create_stripe_product, if: :private?
+  validates :title, presence: true
+  validates :body, presence: true
 
   scope :free, -> { where(private: false) }
   scope :paid, -> { where(private: true) }
@@ -10,7 +12,10 @@ class Article < ApplicationRecord
   end
 
   def create_stripe_product
-    product = Stripe::Product.create({ name: "Article ##{id}", statement_descriptor: title})
+    # Stripe doesn't allow single quotes on statement_descriptor
+    sanitized_title = title.gsub("'", "")
+    product = Stripe::Product.create({ name: "Article ##{id}", statement_descriptor: sanitized_title })
+    # product = Stripe::Product.create({ name: "Article ##{id}", statement_descriptor: title})
     pricing = Stripe::Price.create({
       product: product.id,
       unit_amount: price,
